@@ -10,6 +10,7 @@ import Login from "./pages/Login.jsx";
 import UserDashboard from "./pages/UserDashboard.jsx";
 
 import "./style.css";
+import PersonalInfo from "./components/PersonalInfo.jsx";
 
 export const AppContext = createContext(); // make sure createContext is imported
 
@@ -17,7 +18,12 @@ export const AppContext = createContext(); // make sure createContext is importe
 const router = createBrowserRouter([
   { path: "/", element: <Homepage /> },
   { path: "/login", element: <Login /> },
-  { path: "/signup", element: <Signup /> },
+  {
+    path: "/signup",
+    element: <Signup />,
+    children: [{ path: "personalInfo", element: <PersonalInfo /> }],
+    
+  },
   { path: "/userDashboard", element: <UserDashboard /> },
   { path: "*", element: <NotFoundPage /> },
 ]);
