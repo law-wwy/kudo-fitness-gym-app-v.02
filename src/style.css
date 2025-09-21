@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-softblack: #181818;
+  --color-mustard-light: #facc15;
+  --color-mustard-semi: #e8ab0e;
+  --color-mustard-dark: #ca8a04;
+}
+
+@layer components {
+  .card {
+    @apply m-10 rounded-lg;
+  }
+
+  .shadow-blk {
+    @apply shadow-[-4px_4px_#181818];
+  }
+
+  .shadow-bottom-white {
+    box-shadow: 0 20px 30px -10px rgba(255, 255, 255, 0.9);
+  }
+}
