@@ -11,6 +11,9 @@ import UserDashboard from "./pages/UserDashboard.jsx";
 
 import "./style.css";
 import PersonalInfo from "./components/PersonalInfo.jsx";
+import HealthInfo from "./components/HealthInfo.jsx";
+import GeneralInfo from "./components/GeneralInfo.jsx";
+import TermsAndAgreements from "./components/TermsAndAgreements.jsx";
 
 export const AppContext = createContext(); // make sure createContext is imported
 
@@ -21,9 +24,26 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
-    children: [{ path: "personalInfo", element: <PersonalInfo /> }],
-    
+    children: [
+      {
+        index: true, // 👈 default route = PersonalInfo
+        element: <PersonalInfo />,
+      },
+      {
+        path: "healthInfo",
+        element: <HealthInfo />,
+      },
+      {
+        path: "generalInfo",
+        element: <GeneralInfo />,
+      },
+      {
+        path: "terms",
+        element: <TermsAndAgreements />,
+      },
+    ],
   },
+
   { path: "/userDashboard", element: <UserDashboard /> },
   { path: "*", element: <NotFoundPage /> },
 ]);
@@ -32,7 +52,7 @@ export default function Main() {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <AppContext.Provider value={{ darkMode, setDarkMode }}>
+    <AppContext.Provider value={{ darkMode, setDarkMode, router }}>
       <RouterProvider router={router} />
     </AppContext.Provider>
   );
