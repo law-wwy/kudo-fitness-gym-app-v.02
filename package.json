@@ -34,5 +34,18 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.13",
     "vite": "^7.1.2"
-  }
+  },
+  "description": "Modifications (Ian):     - tailwind css setup     - added the \"Tailwind CSS IntelliSense\" extension in vscode     - hot reload fixed     - file structure fixed",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/law-wwy/kudo-fitness-gym-app-v.02.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/law-wwy/kudo-fitness-gym-app-v.02/issues"
+  },
+  "homepage": "https://github.com/law-wwy/kudo-fitness-gym-app-v.02#readme"
 }
